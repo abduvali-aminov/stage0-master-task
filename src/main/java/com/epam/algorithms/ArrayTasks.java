@@ -1,5 +1,6 @@
 package com.epam.algorithms;
 
+
 /**
  * Here are the tasks for working with the arrays.
  * <p>
@@ -11,7 +12,7 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
-        return null;
+        return new String[]{"winter", "spring", "summer", "autumn"};
     }
 
     /**
@@ -23,7 +24,11 @@ public class ArrayTasks {
      * length = 1  -> [1] length = 3  -> [1, 2, 3] length = 5  -> [1, 2, 3, 4, 5]
      */
     public int[] generateNumbers(int length) {
-        return null;
+        int[] arr = new int[length];
+        for (int i=1; i<=length; i++){
+            arr[i-1] = i;
+        }
+        return arr;
     }
 
     /**
@@ -34,7 +39,11 @@ public class ArrayTasks {
      * arr = [1, 3, 5]   -> sum = 9 arr = [5, -3, -4] -> sum = -2
      */
     public int totalSum(int[] arr) {
-        return 0;
+        int s=0;
+        for (int i : arr) {
+            s = s + i;
+        }
+        return s;
     }
 
     /**
@@ -46,7 +55,12 @@ public class ArrayTasks {
      * arr = [99, -7, 102], number = -7    ->   2 arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
-        return 0;
+        for (int i=0; i<arr.length; i++) {
+            if (arr[i] == number){
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -58,7 +72,11 @@ public class ArrayTasks {
      * "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
-        return null;
+        String[] rarr = new String[arr.length];
+        for (int i=0; i<arr.length; i++){
+            rarr[arr.length - i - 1] = arr[i];
+        }
+        return rarr;
     }
 
     /**
@@ -70,7 +88,15 @@ public class ArrayTasks {
      * arr = [1,-2, 3]      -> [1, 3] arr = [-1, -2, -3]   -> [] arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-        return null;
+        int s=0, count=0;
+        for (int i: arr){
+            if (i>0) s++;
+        }
+        int[] result = new int[s];
+        for (int i: arr){
+            if (i>0) result[count++]=i;
+        }
+        return result;
     }
 
     /**
